@@ -20,6 +20,7 @@
 /client.env.production.local
 
 /server/.env
+#add mongoDB connection uri in a .env file in server directory
 
 npm-debug.log*
 yarn-debug.log*
