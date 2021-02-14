@@ -1,7 +1,7 @@
 import React, {useEffect,useState} from 'react'
 import axios from 'axios';
 import Execise from './Exercise';
-
+import {Link} from 'react-router-dom';
 
 const ExercisList = () => {
     
@@ -38,7 +38,10 @@ const ExercisList = () => {
                                 <td>{exercise.description}</td>
                                 <td>{exercise.duration}</td>
                                 <td>{exercise.date.split('T')[0]}</td>
-                                <td><a href="#" className="btn btn-danger" onClick={() => {deletExercise(exercise._id)}}>Delete</a></td>
+                                <td>
+                                    <Link to={"/edit/"+exercise._id} className="btn btn-primary mr-2">Edit</Link>
+                                    <a href="#" className="btn btn-danger" onClick={() => {deletExercise(exercise._id)}}>Delete</a>
+                                </td>
                             </tr>
                         )
                     })

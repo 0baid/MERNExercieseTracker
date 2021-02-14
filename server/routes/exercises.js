@@ -51,7 +51,7 @@ router.delete('/remove/:id', (req,res) => {
 router.get('/:id', (req,res) => {
     try {
         const id = req.params.id;
-        Exercise.find({_id:id}).then((exercise) => {res.status(400).json(exercise)});
+        Exercise.find({_id:id}).then((exercise) => {res.status(200).json(exercise)});
 
     } catch (error) {
         console.log(error);
@@ -59,7 +59,7 @@ router.get('/:id', (req,res) => {
 });
 
 //update
-router.post('/update/:id' ,(req,res) => {
+router.put('/update/:id' ,(req,res) => {
     try {
         const id = req.params.id;
         Exercise.findById(id).then((exercise) =>{
